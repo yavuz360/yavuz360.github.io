@@ -101,12 +101,12 @@ updateCountdown(currentLanguage);
 updateTranslations();
 
 const minecraftItems = [
-  "https://static.wikia.nocookie.net/minecraft/images/3/30/LapisLazuliBlockNew.png/revision/latest?cb=20190907233252",
-  "https://static.wikia.nocookie.net/minecraft/images/0/01/RedstoneBlockNew.png/revision/latest?cb=20190902230147",
-  "https://static.wikia.nocookie.net/minecraft/images/6/6c/BlockOfEmeraldNew.png/revision/latest?cb=20191021231731",
-  "https://static.wikia.nocookie.net/minecraft/images/d/df/BlockOfNetherite.png/revision/latest?cb=20200212222333",
-  "https://static.wikia.nocookie.net/minecraft/images/9/9d/BlockOfGoldNew.png/revision/latest?cb=20191012230400",
-  "https://static.wikia.nocookie.net/minecraft/images/8/89/BlockOfDiamondNew.png/revision/latest?cb=20190908155806",
+  "images/BlockOfDiamondNew.png",
+  "images/BlockOfEmeraldNew.png",
+  "images/BlockOfGoldNew.png",
+  "images/BlockOfNetheriteNew.png",
+  "images/LapisLazuliBlockNew.png",
+  "images/RedstoneBlockNew.png",
 ];
 
 function createFallingItem() {
