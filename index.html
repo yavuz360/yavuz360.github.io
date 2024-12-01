@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yavuz</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2rem;
+      margin: 0.5rem;
+    }
+    #countdown {
+      font-size: 3rem;
+      color: #333;
+    }
+    p {
+      font-size: 1rem;
+      margin: 1rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <h1>This website will die in:</h1>
+  <div id="countdown">Loading...</div>
+  <p>Because I paid only for one year</p>
+
+  <script>
+    function updateCountdown() {
+      const endDate = new Date("December 1, 2025 00:00:00").getTime();
+      const now = new Date().getTime();
+      const timeLeft = endDate - now;
+
+      if (timeLeft > 0) {
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown").textContent = 
+          `${days}d ${hours}h ${minutes}m ${seconds}s`;
+      } else {
+        document.getElementById("countdown").textContent = "Expired";
+      }
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
