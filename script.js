@@ -11,25 +11,10 @@ const translations = {
     en: "Because I paid only for one year (for now)",
     de: "Weil ich nur für ein Jahr bezahlt habe (vorerst)",
   },
-  cryptoLabel: {
-    tr: "Kripto Para Adresi:",
-    en: "Cryptocurrency Address:",
-    de: "Kryptowährungsadresse:",
-  },
-  copyButton: {
-    tr: "Kopyala",
-    en: "Copy",
-    de: "Kopieren",
-  },
-  copiedAlert: {
-    tr: "Kopyalandı!",
-    en: "Copied!",
-    de: "Kopiert!",
-  },
   bottomText: {
-    tr: "Bu web sitesi 1 Aralık 2024'te doğdu.",
-    en: "This website was born on Dec 1, 2024.",
-    de: "Diese Webseite wurde am 1. Dez. 2024 geboren.",
+    tr: "GitHub ve Icons8'e teşekkürler",
+    en: "Thanks to GitHub and Icons8",
+    de: "Danke an GitHub und Icons8",
   },
   emailText: {
     tr: "Bana bir e-posta gönder",
@@ -68,65 +53,27 @@ function updateCountdown(language) {
 function updateTranslations() {
   document.getElementById("subtitle-top").textContent = translations.subtitleTop[currentLanguage];
   document.getElementById("subtitle-bottom").textContent = translations.subtitleBottom[currentLanguage];
-  document.getElementById("crypto-label").textContent = translations.cryptoLabel[currentLanguage];
-  document.getElementById("copy-btn").textContent = translations.copyButton[currentLanguage];
   document.getElementById("bottom-text").textContent = translations.bottomText[currentLanguage];
   document.getElementById("email-btn").textContent = translations.emailText[currentLanguage];
 }
 
-document.getElementById("copy-btn").addEventListener("click", () => {
-  const cryptoAddress = document.getElementById("crypto-address").textContent;
-  navigator.clipboard.writeText(cryptoAddress).then(() => {
-    alert(translations.copiedAlert[currentLanguage]);
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("btn-turkish").addEventListener("click", () => {
+    currentLanguage = "tr";
+    updateTranslations();
   });
-});
 
-document.getElementById("btn-turkish").addEventListener("click", () => {
-  currentLanguage = "tr";
+  document.getElementById("btn-english").addEventListener("click", () => {
+    currentLanguage = "en";
+    updateTranslations();
+  });
+
+  document.getElementById("btn-german").addEventListener("click", () => {
+    currentLanguage = "de";
+    updateTranslations();
+  });
+
+  setInterval(() => updateCountdown(currentLanguage), 1000);
+  updateCountdown(currentLanguage);
   updateTranslations();
 });
-
-document.getElementById("btn-english").addEventListener("click", () => {
-  currentLanguage = "en";
-  updateTranslations();
-});
-
-document.getElementById("btn-german").addEventListener("click", () => {
-  currentLanguage = "de";
-  updateTranslations();
-});
-
-setInterval(() => updateCountdown(currentLanguage), 1000);
-updateCountdown(currentLanguage);
-updateTranslations();
-
-const minecraftItems = [
-  "images/BlockOfDiamondNew.png",
-  "images/BlockOfEmeraldNew.png",
-  "images/BlockOfGoldNew.png",
-  "images/BlockOfNetheriteNew.png",
-  "images/LapisLazuliBlockNew.png",
-  "images/RedstoneBlockNew.png",
-];
-
-function createFallingItem() {
-  const container = document.getElementById("falling-items-container");
-  const item = document.createElement("img");
-  item.src = minecraftItems[Math.floor(Math.random() * minecraftItems.length)];
-  item.className = "falling-item";
-
-  item.style.left = Math.random() * 100 + "vw";
-
-  const duration = Math.random() * 5 + 3;
-  item.style.animationDuration = `${duration}s`;
-
-  container.appendChild(item);
-
-  setTimeout(() => {
-    container.removeChild(item);
-  }, duration * 1000);
-}
-
-setInterval(() => {
-  createFallingItem();
-}, Math.random() * 2000 + 1000);
