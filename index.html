@@ -4,39 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yavuz</title>
+  <link rel="icon" href="images/favicon.png" type="image/png">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="top-bar">
-    <span class="website-name">Yavuz</span>
-    <div class="language-switcher">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg" alt="Turkish" id="btn-turkish">
-      <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="English" id="btn-english">
-      <img src="https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg" alt="German" id="btn-german">
-    </div>
-  </div>
+  <header class="top-bar">
+    <h1>Yavuz</h1>
+    <nav>
+      <img src="images/tr.svg" alt="Turkish" id="btn-turkish">
+      <img src="images/gb.svg" alt="English" id="btn-english">
+      <img src="images/de.svg" alt="German" id="btn-german">
+      <div style="width: 30px; height: 20px; visibility: hidden;"></div>
+    </nav>
+  </header>
 
-  <div class="main-content">
+  <main class="main-content">
     <p id="subtitle-top">Bu web sitesi şu sürede ölecek:</p>
     <div id="countdown">Loading...</div>
     <p id="subtitle-bottom">Çünkü bu domaini sadece bir yıl için aldım (şimdilik)</p>
-  </div>
+  </main>
 
-  <!-- Crypto Section -->
-  <div class="crypto-section">
-    <span id="crypto-label">Kripto Para Adresi:</span>
-    <div class="crypto-bar">
-      <span id="crypto-address">0x83142021eDe4026e262e641cCB95F74CB06102C8</span>
-      <button id="copy-btn">Kopyala</button>
+  <footer class="bottom-bar">
+    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+      <p id="bottom-text">GitHub ve Icons8'e teşekkürler</p>
+      <a id="email-btn" href="mailto:yavuzkaannacaroglu@gmail.com">Bana e-posta gönder</a>
     </div>
-  </div>
-
-  <div class="bottom-bar">
-    <span id="bottom-text">Bu web sitesi 1 Aralık 2024'te doğdu.</span>
-    <a id="email-btn" href="mailto:yavuzkaannacaroglu@gmail.com">Bana bir e-posta gönder</a>
-  </div>
-
-  <div id="falling-items-container"></div>
+    <div style="width: 30px; height: 30px; visibility: hidden;"></div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
