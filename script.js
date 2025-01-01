@@ -17,9 +17,14 @@ const translations = {
     de: "Danke an GitHub und Icons8",
   },
   emailText: {
-    tr: "Bana bir e-posta gönder",
+    tr: "Bana e-posta gönder",
     en: "Send me an email",
     de: "Schick mir eine E-Mail",
+  },
+  newYearLink: {
+    tr: "Sıradaki yıla ne kadar kaldı?",
+    en: "How long until the next year?",
+    de: "Wie lange bis zum nächsten Jahr?",
   },
 };
 
@@ -55,6 +60,7 @@ function updateTranslations() {
   document.getElementById("subtitle-bottom").textContent = translations.subtitleBottom[currentLanguage];
   document.getElementById("bottom-text").textContent = translations.bottomText[currentLanguage];
   document.getElementById("email-btn").textContent = translations.emailText[currentLanguage];
+  document.getElementById("newyear-link").textContent = translations.newYearLink[currentLanguage];
 }
 
 document.addEventListener("DOMContentLoaded", () => {
