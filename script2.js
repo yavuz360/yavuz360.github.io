@@ -9,19 +9,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const translations = {
     tr: {
-      message: "2026'ya <span id='year-counter'>365 Gün</span> kaldı!",
+      message: "2026'ya <span id='year-counter'>kaç gün</span> kaldı?",
       bottomText: "Mutlu seneler",
       email: "Bana e-posta gönder",
       labels: ["Gün", "Saat", "Dakika"]
     },
     en: {
-      message: "2026 is in <span id='year-counter'>365 Days</span>!",
+      message: "2026 is in <span id='year-counter'>??? Days</span>!",
       bottomText: "Happy New Year",
       email: "Send me an email",
       labels: ["Days", "Hours", "Minutes"]
     },
     de: {
-      message: "2026 in <span id='year-counter'>365 Tage</span>!",
+      message: "2026 in <span id='year-counter'>??? Tage</span>!",
       bottomText: "Frohes neues Jahr",
       email: "Schick mir eine E-Mail",
       labels: ["Tage", "Stunden", "Minuten"]
